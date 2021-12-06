@@ -27,16 +27,3 @@ jobs:
 
       - name: Unit Test
         run: mvn test # Executes the testing framework 
-This file will activate and set up GitHub Actions to -- every time a push or pull_request event on this repository main brach -- run three jobs:
-
-checkout the source code;
-build the sources;
-execute the testing framework.
-Step 3
-Make a commit and a git push. You may use a Git Client for it, or use the following command line:
-
-git add --all
-git commit -m "Setting up GitHub Actions"
-git push origin main
-Step 4
-When your pu
