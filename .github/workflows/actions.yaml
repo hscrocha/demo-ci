@@ -1,0 +1,42 @@
+name: Github CI
+on:
+  # Set up a CI Server to execute the jobs pipeline below when 
+  # a push or pull request is made at the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest # Commands must be executed on a Linux Ubuntu OS
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2 # Checkout the received code 
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1 # Set up Java 1.8
+        with:
+          java-version: 1.8
+
+      - name: Build
+        run: mvn package -Dmaven.test.skip=true # Build (compiles) the source code
+
+      - name: Unit Test
+        run: mvn test # Executes the testing framework 
+This file will activate and set up GitHub Actions to -- every time a push or pull_request event on this repository main brach -- run three jobs:
+
+checkout the source code;
+build the sources;
+execute the testing framework.
+Step 3
+Make a commit and a git push. You may use a Git Client for it, or use the following command line:
+
+git add --all
+git commit -m "Setting up GitHub Actions"
+git push origin main
+Step 4
+When your pu
