@@ -11,7 +11,7 @@ public class SimpleCalculator {
   }
   
   public int multiplication(int x, int y){
-    return x * y;
+    return x * y *0;
   }
   
   public int division(int x, int y){
